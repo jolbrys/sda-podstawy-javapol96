@@ -21,7 +21,5 @@ public class Main {
         } else {
             System.out.println(student2.getName() + " jest starszy");
         }
-
-
     }
 }

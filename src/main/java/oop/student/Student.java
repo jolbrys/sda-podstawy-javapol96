@@ -18,8 +18,13 @@ public class Student {
         this.age = 7;
     }
 
+    //atrybuty obiektu ustawiamy jako prywatne - dobrą praktyką jest zapobiegać przesadnie swobodnemu modyfikowaniu ich z poziomu innych klas
     private String name;
     private int age;
+
+    //poniższe pole jest atrybutem klasy - jest wspólne dla wszystkich obiektów, po zmodyfikowaniu go zmiana bedzie widoczna we wszystkich obiektach
+    //oprócz tego użyliśmy słowa kluczowego final, dzięki czemu ze zmiennej zrobiliśmy de facto stałą. w tym konkretnym przypadku użyliśmy tego połączenia (jeszcze do tego public)
+    //żeby mieć takie wspólne dla obiektów pole, którego przykład użycia znajdziecie poniżej
     public static final int ageLimit = 18;
 
 
@@ -36,6 +41,12 @@ public class Student {
         }
     }
 
+
+    //settery i gettery służą nam odpowiednio do modyfikowania i wyciągania wartości pól z obiektu.
+    //zwróćcie uwage że są publiczne - dlatego możemy je wołać z innych klas
+    //jednoczesnie nadal znajdują sie w klasie Student, więc mają dostęp do prywatnych pól tej klasy
+
+    //settery są voidami i jako argument przyjmują wartość, którą podstawią w odpowiednie pole
     public void setName(String name){
         this.name = name;
     }
@@ -44,6 +55,7 @@ public class Student {
         this.age = age;
     }
 
+    //gettery nie przyjmują argumentów, a ich zadaniem jest zwrócić wartość odpowiedniego pola. dlatego też muszą być tego samego typu, jak to pole.
     public String getName(){
         return this.name;
     }
